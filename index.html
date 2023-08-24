@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/style.css" />
+		<title>Meme Generator</title>
+	</head>
+
+	<body onload="onInit()">
+		<div class="main-screen" onclick="onToggleMenu()"></div>
+
+		<header class="main-header">
+			<div class="header-container main-layout flex space-between align-center">
+				<div class="flex">
+					<img class="logo" onclick="onOpenPage('gallery')" src="imgs/LOGO.png" />
+
+					<select class="select-lang" onchange="onSetLang(this.value)">
+						<option value="en">English</option>
+						<option value="he">עברית</option>
+					</select>
+				</div>
+
+				<nav class="main-nav">
+					<ul class="clean-list flex">
+						<li>
+							<a href="#" class="btn-gallery active" onclick="onOpenPage('gallery')" data-trans="nav-gallery">Gallery</a>
+						</li>
+
+						<li>
+							<a href="#" class="btn-memes" onclick="onOpenPage('memes')" data-trans="nav-memes">Memes</a>
+						</li>
+					</ul>
+				</nav>
+
+				<button class="btn-menu" onclick="onToggleMenu()">☰</button>
+			</div>
+		</header>
+
+		<main class="editor-container main-layout flex align-center none">
+			<div class="canvas-container">
+				<canvas class="canvas" height="550px" width="550px"></canvas>
+			</div>
+
+			<div class="tools-container">
+				<section class="control-box grid">
+					<input
+						type="text"
+						name="line"
+						class="input-line self-center"
+						oninput="onSetLineTxt(this.value)"
+						title="Change line text"
+						autocomplete="off"
+						placeholder="Press + to add text"
+					/>
+
+					<button class="btn btn-up" onclick="onMoveLine('up')" title="Move line up">
+						<img src="icons/up.png" />
+					</button>
+
+					<button class="btn btn-down" onclick="onMoveLine('down')" title="Move line down">
+						<img src="icons/down.png" />
+					</button>
+
+					<button class="btn btn-upanddown" onclick="onChangeLine()" title="Switch between text lines">
+						<img src="icons/up-and-down.png" />
+					</button>
+
+					<button class="btn btn-add-line tooltip" onclick="onAddLine()" title="Add text line">
+						<img src="icons/add.png" />
+						<span class="tooltiptext"></span>
+					</button>
+
+					<button class="btn btn-remove-line" onclick="onRemoveLine()" title="Delete text line">
+						<img src="icons/trash.png" />
+					</button>
+				</section>
+
+				<section class="style-box grid">
+					<button class="btn btn-increase" onclick="onChangeFontSize(5)" title="Increase font size">
+						<img src="icons/increase-font.png" />
+					</button>
+
+					<button class="btn btn-decrease" onclick="onChangeFontSize(-5)" title="Decrease font size">
+						<img src="icons/decrease-font.png" />
+					</button>
+
+					<button class="btn btn-stroke-color" title="Stroke color">
+						<img src="icons/stroke-color.png" />
+						<input type="color" name="stroke-color" value="#000000" oninput="onChangeColor('stroke', this.value)" />
+					</button>
+
+					<button class="btn btn-font-color" title="Font color">
+						<img src="icons/font-color.png" />
+						<input type="color" name="font-color" value="#000000" oninput="onChangeColor('font', this.value)" />
+					</button>
+
+					<select class="select-font-family btn" onchange="onChangeFontFamily(this.value)">
+						<option value="Sedgwick">Sedgwick</option>
+						<option value="black-ops">black-ops</option>
+						<option value="Qwitcher">Qwitcher</option>
+						<option value="Barriecito">Barriecito</option>
+					</select>
+				</section>
+
+				<section class="btns-box">
+					<ul class="btn-container clean-list flex justify-center">
+						<li>
+							<button class="btn btn-save" onclick="onSaveMeme(this)" data-trans="btn-save">Save</button>
+						</li>
+
+						<li>
+							<a class="btn-download" href="#" onclick="onDownloadMeme(this)" download="my-meme.jpg"
+								><button class="btn" data-trans="btn-download">Download</button></a
+							>
+						</li>
+
+						<li>
+							<button class="btn btn-share" onclick="onShareMeme()" data-trans="btn-share">Share</button>
+						</li>
+					</ul>
+				</section>
+			</div>
+		</main>
+
+		<main class="gallery-container">
+			<section class="search-filter">
+				<div class="search-filter-container main-layout flex flex-column justify-center align-center">
+					<div class="search-container">
+						<form class="search-form" onsubmit="onSearch(event)">
+							<input
+								list="search-words"
+								class="search"
+								name="search"
+								placeholder="search"
+								autocomplete="off"
+								data-trans="search-placeholder"
+							/>
+							<datalist id="search-words"></datalist>
+
+							<button class="btn-search" type="button">
+								<img src="icons/search-icon.png" />
+							</button>
+						</form>
+
+						<input
+							type="file"
+							id="BtnUploadHidden"
+							class="img-item file-input btn"
+							name="image"
+							onchange="onUploadImg(event)"
+							style="display: none"
+						/>
+					</div>
+
+					<label for="BtnUploadHidden" class="btn-upload" data-trans="upload-img-text">Upload an image</label>
+
+					<div class="filter-container flex align-center">
+						<div>
+							<ul class="keywords-container clean-list flex align-center flex-wrap"></ul>
+						</div>
+
+						<div class="btn-more" onclick="onToggleMore(this)"></div>
+					</div>
+				</div>
+			</section>
+
+			<section class="images-container main-layout grid"></section>
+		</main>
+
+		<main class="memes-container none">
+			<section class="meme-container main-layout grid"></section>
+		</main>
+
+		<div class="modal" style="display: none">
+			<div class="modal-container">
+				<p data-trans="modal-text">Saved!</p>
+			</div>
+		</div>
+
+		<script src="js/service/utils.js"></script>
+		<script src="js/service/i18n-service.js"></script>
+		<script src="js/service/meme-service.js"></script>
+		<script src="js/editor-controller.js"></script>
+		<script src="js/gallery-controller.js"></script>
+		<script src="js/meme-controller.js"></script>
+	</body>
+</html>
