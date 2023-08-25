@@ -1,0 +1,12 @@
+.main-header {
+	background-color: #d2d6da;
+}
+
+.header-container {
+	height: 66px;
+}
+
+.main-header .logo {
+	color: #fff;
+	cursor: pointer;
+}

@@ -107,12 +107,14 @@ function onRemoveLine() {
 }
 
 function onSaveMeme() {
-	gIsMemeSave = true
-	renderMeme()
-
 	openModal()
+	gIsMemeSave = true
+
 	const meme = gElCanvas.toDataURL()
 	saveMeme(meme)
+
+	renderMeme()
+
 	gIsMemeSave = false
 }
 
@@ -123,14 +125,6 @@ function openModal() {
 	setTimeout(() => {
 		elModal.style.display = 'none'
 	}, 1500)
-}
-
-window.onclick = function (event) {
-	const elModal = document.querySelector('.modal')
-
-	if (event.target === elModal) {
-		elModal.style.display = 'none'
-	}
 }
 
 function onDownloadMeme(elLink) {

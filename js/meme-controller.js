@@ -43,9 +43,10 @@ function renderKeywords() {
 	document.querySelector('.keywords-container').innerHTML = strHtml
 }
 
-function onImgSelect(id) {
+function onSelectImg(id) {
 	setImg(id)
 	moveToEditPage()
+	onAddLine()
 	renderMeme()
 }
 
@@ -104,6 +105,7 @@ function onUploadImg(ev) {
 		img.src = event.target.result
 		setImg(100, img.src)
 		moveToEditPage()
+		onAddLine()
 		renderMeme()
 	}
 
@@ -118,9 +120,8 @@ function onOpenImgModal(imgSrc, imgId) {
                         class="btn-download"
                         href="#"
                         onclick="onDownloadImg(this, '${imgSrc}', '${imgId}')"
-                        download="my-meme.jpg"
-                        ><button class="btn" data-trans="btn-download">Download</button></a
-                      >
+                        download="meme.jpg">
+						<button class="btn" data-trans="btn-download">Download</button></a>
                       </div>
                     </div>`
 

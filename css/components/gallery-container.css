@@ -1,0 +1,16 @@
+.gallery-container .search-filter {
+	margin-bottom: 20px;
+}
+
+.gallery-container .search-filter-container {
+	gap: 20px;
+	height: 100px;
+}
+
+.gallery-container .images-container,
+.meme-container {
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-gap: 20px;
+	justify-items: center;
+	margin-bottom: 20px;
+}

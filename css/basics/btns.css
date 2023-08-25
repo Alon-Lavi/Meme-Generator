@@ -1,0 +1,37 @@
+.editor-container .btn {
+	border: 1px solid black;
+	background-color: white;
+	cursor: pointer;
+}
+
+.style-box .btn-stroke-color input[type='color'],
+.style-box .btn-font-color input[type='color'] {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	height: 100%;
+	width: 100%;
+	cursor: pointer;
+}
+
+.btn-container > * {
+	margin: 10px;
+}
+
+.btn-upload {
+	margin-inline-end: auto;
+	cursor: pointer;
+}
+
+.btn-upload:hover {
+	font-weight: bold;
+}
+
+.search-form .btn-search {
+	border: none;
+	background-color: transparent;
+	position: absolute;
+	margin-inline-start: -30px;
+	cursor: pointer;
+}

@@ -1,0 +1,85 @@
+.tools-container .control-box {
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	grid-template-areas:
+		'txt txt txt txt txt'
+		'up down up-down add remove';
+	grid-gap: 20px;
+	margin-bottom: 20px;
+}
+
+.tools-container .control-box .input-line {
+	grid-area: txt;
+	width: 40%;
+	border: 1px solid black;
+}
+
+.tools-container .control-box .btn-up {
+	grid-area: up;
+}
+
+.tools-container .control-box .btn-down {
+	grid-area: down;
+}
+
+.tools-container .control-box .btn-upaddown {
+	grid-area: up-down;
+}
+
+.tools-container .control-box .btn-add-line {
+	grid-area: add;
+}
+
+.tools-container .control-box .btn-remove-line {
+	grid-area: remove;
+}
+
+.tools-container .style-box {
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-areas:
+		'increase decrease stroke-color  font-color'
+		'font-family font-family font-family font-family ';
+	grid-gap: 20px;
+}
+
+.tools-container .style-box .btn-increase {
+	grid-area: increase;
+}
+
+.tools-container .style-box .btn-decrease {
+	grid-area: decrease;
+}
+
+.tools-container .style-box .btn-align-left {
+	grid-area: align-left;
+}
+
+.tools-container .style-box .btn-align-center {
+	grid-area: align-center;
+}
+
+.tools-container .style-box .btn-align-right {
+	grid-area: align-right;
+}
+
+.tools-container .style-box .select-font-family {
+	grid-area: font-family;
+	font-size: 1rem;
+	padding: auto;
+}
+
+.tools-container .style-box .btn-stroke-color {
+	grid-area: stroke-color;
+	position: relative;
+}
+
+.tools-container .style-box .btn-font-color {
+	grid-area: font-color;
+	position: relative;
+}
+
+.tools-container .control-box img,
+.tools-container .style-box img {
+	width: 20px;
+	height: 20px;
+}

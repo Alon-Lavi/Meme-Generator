@@ -1,7 +1,7 @@
 'use strict'
 
 const STORAGE_KEY = 'memeDB'
-var gMemes
+var gMemes = []
 var gCurrLineIdx = 0
 var gFilterWord = 'all'
 

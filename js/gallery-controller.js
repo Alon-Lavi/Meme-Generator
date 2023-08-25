@@ -6,7 +6,7 @@ function renderGallery() {
 	var strHtml = imgs
 		.map(img => {
 			return `<div class="img-gallery">
-                <img src="imgs/imgs-square/${img.url}" onclick="onImgSelect(${img.id})">
+                <img src="imgs/imgs-square/${img.url}" onclick="onSelectImg(${img.id})">
               </div>`
 		})
 		.join('')
