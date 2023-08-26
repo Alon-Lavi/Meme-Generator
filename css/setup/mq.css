@@ -45,7 +45,8 @@
 	}
 
 	.editor-container .canvas-container {
-		width: 45%;
+		max-width: 45%;
+		max-height: 100%;
 	}
 
 	.editor-container .tools-container {
@@ -95,5 +96,25 @@
 
 	.main-header .main-nav a:hover {
 		background-color: #ccc;
+	}
+
+	.editor-container {
+		width: 100%;
+	}
+
+	.editor-container .canvas-container {
+		width: 90%;
+		min-height: 100%;
+	}
+
+	.editor-container .tools-container {
+		width: 90%;
+		height: 80%;
+		margin: 0;
+	}
+
+	.canvas {
+		width: 50%;
+		align-items: center;
 	}
 }

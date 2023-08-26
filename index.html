@@ -117,7 +117,7 @@
 						</li>
 
 						<li>
-							<button class="btn btn-share" onclick="onShareMeme()" data-trans="btn-share">Share</button>
+							<button class="btn btn-share" onclick="onUploadImg()" data-trans="btn-share">Share</button>
 						</li>
 					</ul>
 				</section>
@@ -149,7 +149,7 @@
 							id="BtnUploadHidden"
 							class="img-item file-input btn"
 							name="image"
-							onchange="onUploadImg(event)"
+							onchange="onImgInput(event)"
 							style="display: none"
 						/>
 					</div>
@@ -160,8 +160,6 @@
 						<div>
 							<ul class="keywords-container clean-list flex align-center flex-wrap"></ul>
 						</div>
-
-						<div class="btn-more" onclick="onToggleMore(this)"></div>
 					</div>
 				</div>
 			</section>

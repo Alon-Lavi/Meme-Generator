@@ -4,7 +4,10 @@ function onInit() {
 	gElCanvas = document.querySelector('.canvas')
 	gCtx = gElCanvas.getContext('2d')
 
-	addListeners()
+	window.addEventListener('resize', () => {
+		renderMeme()
+		resizeCanvas()
+	})
 
 	renderKeywords()
 	renderGallery()
@@ -97,19 +100,30 @@ function onToggleMenu() {
 	elBtnMenu.innerText = document.body.classList.contains('menu-open') ? '✕' : '☰'
 }
 
-function onUploadImg(ev) {
-	var reader = new FileReader()
+function onImgInput(ev) {
+	loadImageFromInput(ev, renderImg)
+}
 
-	reader.onload = event => {
-		var img = new Image()
+// Read the file from the input
+// When done send the image to the callback function
+function loadImageFromInput(ev, onImageReady) {
+	const reader = new FileReader()
+
+	reader.onload = function (event) {
+		let img = new Image()
 		img.src = event.target.result
+		img.onload = () => onImageReady(img)
 		setImg(100, img.src)
 		moveToEditPage()
 		onAddLine()
 		renderMeme()
 	}
-
 	reader.readAsDataURL(ev.target.files[0])
+}
+
+function renderImg(img) {
+	// Draw the img on the canvas
+	gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
 }
 
 function onOpenImgModal(imgSrc, imgId) {
@@ -122,6 +136,7 @@ function onOpenImgModal(imgSrc, imgId) {
                         onclick="onDownloadImg(this, '${imgSrc}', '${imgId}')"
                         download="meme.jpg">
 						<button class="btn" data-trans="btn-download">Download</button></a>
+						<button class="btn btn-share" onclick="onUploadImg()" data-trans="btn-share">Share</button>
                       </div>
                     </div>`
 
