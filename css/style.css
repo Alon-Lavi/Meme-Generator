@@ -5,6 +5,8 @@
 @import url(./components/gallery-container.css);
 @import url(./components/modal.css);
 
+@import url(./setup/typography.css);
+
 @import url(./basics/base.css);
 @import url(./basics/helpers.css);
 @import url(./basics/layout.css);
@@ -12,38 +14,3 @@
 
 @import url(./setup/mq.css);
 
-@font-face {
-	font-family: barriecito;
-	src: url('../fonts/barriecito/barriecito-Regular.ttf');
-}
-
-@font-face {
-	font-family: black-ops;
-	src: url('../fonts/black-ops/blackOpsOne-Regular.ttf');
-}
-
-@font-face {
-	font-family: qwitcher;
-	src: url('../fonts/qwitcher/qwitcherGrypen-Regular.ttf');
-}
-
-@font-face {
-	font-family: sedgwick;
-	src: url('../fonts/sedgwick/sedgwickAveDisplay-Regular.ttf');
-}
-
-.select-font-family option[value='barriecito'] {
-	font-family: barriecito;
-}
-
-.select-font-family option[value='black-ops'] {
-	font-family: black-ops;
-}
-
-.select-font-family option[value='qwitcher'] {
-	font-family: qwitcher;
-}
-
-.select-font-family option[value='sedgwick'] {
-	font-family: sedgwick;
-}
