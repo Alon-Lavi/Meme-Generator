@@ -72,6 +72,7 @@ function onChangeFontSize(diff) {
 function onChangeFontFamily(font) {
 	changeFontFamily(font)
 	renderMeme()
+	renderGallery()
 }
 
 function onChangeLine() {

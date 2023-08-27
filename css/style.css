@@ -13,8 +13,8 @@
 @import url(./setup/mq.css);
 
 @font-face {
-	font-family: qwitcher;
-	src: url(/fonts/qwitcher/qwitcherGrypen-Regular.ttf);
+	font-family: barriecito;
+	src: url(/fonts/barriecito/barriecito-Regular.ttf);
 }
 
 @font-face {
@@ -23,11 +23,27 @@
 }
 
 @font-face {
+	font-family: qwitcher;
+	src: url(/fonts/qwitcher/qwitcherGrypen-Regular.ttf);
+}
+
+@font-face {
 	font-family: sedgwick;
 	src: url(/fonts/sedgwick/sedgwickAveDisplay-Regular.ttf);
 }
 
-@font-face {
+.select-font-family option[value='barriecito'] {
 	font-family: barriecito;
-	src: url(/fonts/barriecito/barriecito-Regular.ttf);
+}
+
+.select-font-family option[value='black-ops'] {
+	font-family: black-ops;
+}
+
+.select-font-family option[value='qwitcher'] {
+	font-family: qwitcher;
+}
+
+.select-font-family option[value='sedgwick'] {
+	font-family: sedgwick;
 }

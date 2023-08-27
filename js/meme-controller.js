@@ -93,7 +93,7 @@ function onKeyFilter(word) {
 }
 
 function onToggleMenu() {
-	if (window.innerWidth > 820) document.body.classList.toggle('menu-open')
+	if (window.innerWidth < 820) document.body.classList.toggle('menu-open')
 	else document.body.classList.toggle('menu-open')
 
 	const elBtnMenu = document.querySelector('.btn-menu')

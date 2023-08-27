@@ -80,9 +80,9 @@ function getLines() {
 
 function setLineTxt(txt) {
 	const line = getLine()
-
 	if (!line) return
 
+	line.pos.x = gElCanvas.width / 2
 	line.txt = txt
 }
 
@@ -132,7 +132,7 @@ function changeLine() {
 function addLine(font) {
 	const lines = getLines()
 	const numNewLine = lines.length + 1
-	const newLine = createLine(font, numNewLine)
+	const newLine = createLine(font)
 
 	gMeme.lines.push(newLine)
 	updateLineIdx(gMeme.lines.length - 1)
@@ -176,10 +176,8 @@ function updateLineIdx(idx) {
 	gMeme.selectedLineIdx = gCurrLineIdx
 }
 
-function createLine(font, numNewline) {
+function createLine(font) {
 	const newPos = { x: gElCanvas.width / 2, y: gElCanvas.height / 2 }
-
-	if (numNewline === 1) newPos.y
 
 	return {
 		txt: '',
