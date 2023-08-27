@@ -1,16 +1,16 @@
-@import url(./components/main-screen.css);
-@import url(./components/main-header.css);
-@import url(./components/keywords.css);
-@import url(./components/tools-container.css);
-@import url(./components/gallery-container.css);
-@import url(./components/modal.css);
+@import url(setup/typography.css);
+@import url(components/main-screen.css);
+@import url(components/main-header.css);
+@import url(components/keywords.css);
+@import url(components/tools-container.css);
+@import url(components/gallery-container.css);
+@import url(components/modal.css);
 
-@import url(./setup/typography.css);
 
-@import url(./basics/base.css);
-@import url(./basics/helpers.css);
-@import url(./basics/layout.css);
-@import url(./basics/btns.css);
+@import url(basics/base.css);
+@import url(basics/helpers.css);
+@import url(basics/layout.css);
+@import url(basics/btns.css);
 
-@import url(./setup/mq.css);
+@import url(setup/mq.css);
 
