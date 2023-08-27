@@ -19,3 +19,9 @@ function makeId(length = 6) {
 
 	return txt
 }
+
+function mult(num1, num2, num3) {
+	var res = num1 * num2 * num3
+
+	return res
+}

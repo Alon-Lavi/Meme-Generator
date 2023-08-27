@@ -56,6 +56,7 @@ function getSavedMemes() {
 	gMemes = loadFromStorage(STORAGE_KEY)
 
 	if (!gMemes) gMemes = []
+
 	return gMemes
 }
 
@@ -79,6 +80,7 @@ function getLines() {
 
 function setLineTxt(txt) {
 	const line = getLine()
+
 	if (!line) return
 
 	line.txt = txt
@@ -105,6 +107,7 @@ function changeFontSize(diff) {
 
 function changeFontFamily(font) {
 	const line = getLine()
+
 	if (!line) return
 
 	line.font = font
@@ -130,7 +133,7 @@ function changeLine() {
 function addLine(font) {
 	const lines = getLines()
 	const numNewLine = lines.length + 1
-	const newLine = createLine(font)
+	const newLine = createLine(font, numNewLine)
 
 	gMeme.lines.push(newLine)
 	updateLineIdx(gMeme.lines.length - 1)
@@ -138,6 +141,7 @@ function addLine(font) {
 
 function removeLine() {
 	const lines = getLines()
+
 	if (!lines.length) return
 
 	lines.splice(gCurrLineIdx, 1)
@@ -173,8 +177,11 @@ function updateLineIdx(idx) {
 	gMeme.selectedLineIdx = gCurrLineIdx
 }
 
-function createLine(font) {
+function createLine(font, numNewline) {
 	const newPos = { x: gElCanvas.width / 2, y: gElCanvas.height / 2 }
+
+	if (numNewline === 1) newPos.y
+	else if (numNewline > 1) newPos.y = gElCanvas.height / 2 + 15
 
 	return {
 		txt: '',
