@@ -1,19 +1,19 @@
 @font-face {
-	font-family: Qwitcher;
-	src: url(/fonts/Qwitcher/QwitcherGrypen-Regular.ttf);
+	font-family: qwitcher;
+	src: url(/fonts/qwitcher/qwitcherGrypen-Regular.ttf);
 }
 
 @font-face {
 	font-family: black-ops;
-	src: url(/fonts/Black-ops/BlackOpsOne-Regular.ttf);
+	src: url(/fonts/black-ops/blackOpsOne-Regular.ttf);
 }
 
 @font-face {
-	font-family: Sedgwick;
-	src: url(/fonts/Sedgwick/SedgwickAveDisplay-Regular.ttf);
+	font-family: sedgwick;
+	src: url(/fonts/sedgwick/sedgwickAveDisplay-Regular.ttf);
 }
 
 @font-face {
-	font-family: Barriecito;
-	src: url(/fonts/Barriecito/Barriecito-Regular.ttf);
+	font-family: barriecito;
+	src: url(/fonts/barriecito/barriecito-Regular.ttf);
 }
