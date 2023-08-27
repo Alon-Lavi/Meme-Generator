@@ -107,7 +107,6 @@ function changeFontSize(diff) {
 
 function changeFontFamily(font) {
 	const line = getLine()
-
 	if (!line) return
 
 	line.font = font
@@ -181,7 +180,6 @@ function createLine(font, numNewline) {
 	const newPos = { x: gElCanvas.width / 2, y: gElCanvas.height / 2 }
 
 	if (numNewline === 1) newPos.y
-	else if (numNewline > 1) newPos.y = gElCanvas.height / 2 + 15
 
 	return {
 		txt: '',
